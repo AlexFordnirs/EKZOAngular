@@ -1,0 +1,5 @@
+<div *ngFor="let image of asteroidsImages">
+  <img [src]="image.url" [alt]="image.title">
+  <p>{{ image.title }}</p>
+  <p>{{ image.explanation }}</p>
+</div>

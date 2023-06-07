@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NasaApiService } from './nasa-api.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nasa-app';
+  private apiKey: string = '';
+
+  constructor(private nasaApiService: NasaApiService) {}
+
+  submitApiKey() {
+    this.nasaApiService.setApiKey(this.apiKey);
+  }
 }
